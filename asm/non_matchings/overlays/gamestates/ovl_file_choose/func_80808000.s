@@ -1,3 +1,25 @@
+.rdata
+glabel D_80812B20
+    .asciz "../z_file_nameset_PAL.c"
+    .balign 4
+
+glabel D_80812B38
+    .asciz "014 xpos=%d  contents=%d\n"
+    .balign 4
+
+glabel D_80812B54
+    .asciz "23 xpos=%d  contents=%d\n"
+    .balign 4
+
+glabel D_80812B70
+    .asciz "mjp=%d  xpos=%d  ypos=%d  name_contents=%d\n"
+    .balign 4
+
+glabel D_80812B9C
+    .asciz "../z_file_nameset_PAL.c"
+    .balign 4
+    
+.text
 glabel func_80808000
 /* 042C0 80808000 27BDFF10 */  addiu   $sp, $sp, 0xFF10           ## $sp = FFFFFF10
 /* 042C4 80808004 AFBF0024 */  sw      $ra, 0x0024($sp)           
@@ -14,7 +36,7 @@ glabel func_80808000
 /* 042F0 80808030 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 042F4 80808034 0C201C8F */  jal     func_8080723C              
 /* 042F8 80808038 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
-/* 042FC 8080803C 0C202FF9 */  jal     func_8080BFE4              
+/* 042FC 8080803C 0C202FF9 */  jal     FileChoose_FlashCursor              
 /* 04300 80808040 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 04304 80808044 3C0A0001 */  lui     $t2, 0x0001                ## $t2 = 00010000
 /* 04308 80808048 354A8000 */  ori     $t2, $t2, 0x8000           ## $t2 = 00018000
@@ -452,7 +474,7 @@ glabel func_80808000
 /* 04984 808086C4 AC4F0004 */  sw      $t7, 0x0004($v0)           ## 00000004
 /* 04988 808086C8 AFAB00D8 */  sw      $t3, 0x00D8($sp)           
 /* 0498C 808086CC AFA80034 */  sw      $t0, 0x0034($sp)           
-/* 04990 808086D0 0C201F73 */  jal     func_80807DCC              
+/* 04990 808086D0 0C201F73 */  jal     FileChoose_DrawKeyboard              
 /* 04994 808086D4 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 04998 808086D8 8FAB00D8 */  lw      $t3, 0x00D8($sp)           
 /* 0499C 808086DC 8FA80034 */  lw      $t0, 0x0034($sp)           
@@ -670,7 +692,7 @@ glabel func_80808000
 /* 04CBC 808089FC AFA80034 */  sw      $t0, 0x0034($sp)           
 /* 04CC0 80808A00 000E79C0 */  sll     $t7, $t6,  7               
 /* 04CC4 80808A04 01F02821 */  addu    $a1, $t7, $s0              
-/* 04CC8 80808A08 0C201B6C */  jal     func_80806DB0              
+/* 04CC8 80808A08 0C201B6C */  jal     FileChoose_DrawCharacter              
 /* 04CCC 80808A0C 00A12821 */  addu    $a1, $a1, $at              
 /* 04CD0 80808A10 8FB80038 */  lw      $t8, 0x0038($sp)           
 /* 04CD4 80808A14 3C01FFFF */  lui     $at, 0xFFFF                ## $at = FFFF0000

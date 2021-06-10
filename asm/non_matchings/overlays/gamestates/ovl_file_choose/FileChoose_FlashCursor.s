@@ -1,4 +1,30 @@
-glabel func_8080BFE4
+.rdata
+glabel D_80812D4C
+    .asciz "1:read_buff[]=%x, %x, %x, %x\n"
+    .balign 4
+
+glabel D_80812D6C
+    .asciz "read_buff[]=%x, %x, %x, %x\n"
+    .balign 4
+
+glabel D_80812D88
+    .asciz "1:read_buff[]=%x, %x, %x, %x\n"
+    .balign 4
+
+glabel D_80812DA8
+    .asciz "read_buff[]=%x, %x, %x, %x\n"
+    .balign 4
+
+glabel D_80812DC4
+    .asciz "1:read_buff[]=%x, %x, %x, %x\n"
+    .balign 4
+
+glabel D_80812DE4
+    .asciz "read_buff[]=%x, %x, %x, %x\n"
+    .balign 4
+
+.text
+glabel FileChoose_FlashCursor
 /* 082A4 8080BFE4 27BDFFD8 */  addiu   $sp, $sp, 0xFFD8           ## $sp = FFFFFFD8
 /* 082A8 8080BFE8 AFBF0024 */  sw      $ra, 0x0024($sp)           
 /* 082AC 8080BFEC AFB10020 */  sw      $s1, 0x0020($sp)           

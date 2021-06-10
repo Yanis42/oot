@@ -581,7 +581,7 @@ void Gameplay_Update(GlobalContext* globalCtx) {
                                     gSaveContext.minigameState = 3;
                                 }
                             } else {
-                                SET_NEXT_GAMESTATE(&globalCtx->state, func_80811A20, char[0x1CAE0]);
+                                SET_NEXT_GAMESTATE(&globalCtx->state, FileChoose_Init, char[0x1CAE0]);
                             }
                         } else {
                             globalCtx->transitionCtx.destroy(&globalCtx->transitionCtx);
@@ -1457,6 +1457,7 @@ void Gameplay_InitScene(GlobalContext* globalCtx, s32 spawn) {
 
 void Gameplay_SpawnScene(GlobalContext* globalCtx, s32 sceneNum, s32 spawn) {
     Scene* scene = &gSceneTable[sceneNum];
+    u32 roomSize;
 
     scene->unk_13 = 0;
     globalCtx->loadedScene = scene;

@@ -1321,7 +1321,7 @@ void Sram_VerifyAndLoadAllSaves(FileChooseContext* fileChoose, SramContext* sram
 void Sram_InitSave(FileChooseContext* fileChoose, SramContext* sramCtx);
 void Sram_EraseSave(FileChooseContext* fileChoose, SramContext* sramCtx);
 void Sram_CopySave(FileChooseContext* fileChoose, SramContext* sramCtx);
-void Sram_Write16Bytes(SramContext* sramCtx);
+void Sram_WriteSramHeader(SramContext* sramCtx);
 void Sram_InitSram(GameState* gameState, SramContext* sramCtx);
 void Sram_Alloc(GameState* gameState, SramContext* sramCtx);
 void Sram_Init(GlobalContext* globalCtx, SramContext* sramCtx);
@@ -2586,7 +2586,7 @@ void Select_Init(GameState* thisx);
 void Select_Destroy(GameState* thisx);
 void Opening_Init(GameState* thisx);
 void Opening_Destroy(GameState* thisx);
-void func_80811A20(GameState* thisx); // FileChoose_Init
-void func_80811A18(GameState* thisx); // FileChoose_Destroy
+void FileChoose_Init(GameState* thisx);
+void FileChoose_Destroy(GameState* thisx);
 
 #endif
